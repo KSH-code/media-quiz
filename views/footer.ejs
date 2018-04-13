@@ -1,0 +1,24 @@
+<div id="footer">
+    <p>copyright 2018 RNB. all rights reserved</p>
+</div>
+</body>
+<script>
+    $('#popup_login .popup_link').on('click', function () {
+        $('#popup_login').hide()
+        $('#popup_register').show()
+    })
+    $('.login').on('click', function () {
+        $('#popup').show()
+        $('#popup_register').hide()
+        $('#popup_login').show()
+    })
+    $('#popup_register .popup_link').on('click', function () {
+        $('#popup_register').hide()
+        $('#popup_login').show()
+    })
+    $('#popup_color').on('click', function () {
+        $('#popup').hide()
+    })
+</script>
+
+</html>

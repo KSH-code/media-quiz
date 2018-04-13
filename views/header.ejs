@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        <%=title%>
+    </title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="popup">
+        <div id="popup_register">
+            <img src="" alt="" class="popup_logo">
+            <form action="/register" method="post">
+                <div class="popup_input">
+                    <p>아이디</p>
+                    <input type="text" placeholder="아이디" name="name">
+                </div>
+                <div class="popup_input">
+                    <p>닉네임</p>
+                    <input type="text" placeholder="닉네임" name="nickname">
+                </div>
+                <div class="popup_input">
+                    <p>비밀번호</p>
+                    <input type="text" placeholder="비밀번호" name="password">
+                </div>
+                <div class="popup_input">
+                    <p>비밀번호 확인</p>
+                    <input type="text" placeholder="비밀번호 확인" name="confirmPassword">
+                </div>
+                <button class="primary_button">회원가입</button>
+                <a href="javascript:void(0)" class="popup_link">로그인으로 돌아가기</a>
+            </form>
+        </div>
+        <div id="popup_login">
+            <img src="" alt="" class="popup_logo">
+            <form action="/login" method="post">
+                <div class="popup_input">
+                    <p>아이디</p>
+                    <input type="text" placeholder="아이디" name="name">
+                </div>
+                <div class="popup_input">
+                    <p>비밀번호</p>
+                    <input type="text" placeholder="비밀번호" name="password">
+                </div>
+                <button class="primary_button">회원로그인</button>
+                <a href="javascript:void(0)" class="popup_link">아직 회원이 아니십니까?</a>
+            </form>
+        </div>
+        <div id="popup_color"></div>
+    </div>
+    <div id="header">
+        <a href="/" class="logo">
+            <img src="" alt="logo">
+        </a>
+        <a href="javascript:void(0)" class="login">로그인</a>
+    </div>

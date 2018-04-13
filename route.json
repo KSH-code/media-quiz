@@ -1,0 +1,13 @@
+[
+    {
+        "method": "get",
+        "page": "index",
+        "path": "/",
+        "title": "메인 페이지"
+    },
+    {
+        "method": "post",
+        "path": "/register",
+        "handler": "register"
+    }
+]
