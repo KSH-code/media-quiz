@@ -9,8 +9,12 @@
         <%=title%>
     </title>
     <script>
-        alert('<%=content%>')
-        location.href = '<%=href%>'
+        <% if (typeof content === 'string') { %>
+            alert('<%=content%>')
+            <% } %>
+        const href = '<%=href%>'
+        if (href === 'back') history.back()
+        else location.href = href
     </script>
 </head>
 

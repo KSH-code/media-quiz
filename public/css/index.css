@@ -1,3 +1,7 @@
+button {
+    border: none;
+}
+
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -5,7 +9,7 @@ select {
 }
 
 @font-face {
-    font-family: 'NotoSansCJKkr-Bold';
+    font-family: 'NotoSansCJK-Bold';
     src: url('fonts/NotoSansCJK-Bold.ttc');
 }
 
@@ -15,27 +19,27 @@ select {
 }
 
 @font-face {
-    font-family: 'NotoSansCJKkr-DemiLight';
+    font-family: 'NotoSansCJK-DemiLight';
     src: url('fonts/NotoSansCJK-DemiLight.ttc');
 }
 
 @font-face {
-    font-family: 'NotoSansCJKkr-Light';
+    font-family: 'NotoSansCJK-Light';
     src: url('fonts/NotoSansCJK-Light.ttc');
 }
 
 @font-face {
-    font-family: 'NotoSansCJKkr-Medium';
+    font-family: 'NotoSansCJK-Medium';
     src: url('fonts/NotoSansCJK-Medium.ttc');
 }
 
 @font-face {
-    font-family: 'NotoSansCJKkr-Regular';
+    font-family: 'NotoSansCJK-Regular';
     src: url('fonts/NotoSansCJK-Regular.ttc');
 }
 
 @font-face {
-    font-family: 'NotoSansCJKkr-Thin';
+    font-family: 'NotoSansCJK-Thin';
     src: url('fonts/NotoSansCJK-Thin.ttc');
 }
 
@@ -51,7 +55,7 @@ select {
 
 @font-face {
     font-family: 'SMG40';
-    src: url('fonts/SMG20.ttf');
+    src: url('fonts/SMG40.ttf');
 }
 
 .danger_button {
@@ -163,7 +167,8 @@ body {
     transform: translateY(-50%);
 }
 
-#header>.login {
+#header>.login,
+#header>.logout {
     position: absolute;
     position: absolute;
     top: 50%;
@@ -472,4 +477,247 @@ button.primary_button {
     text-align: center;
     color: rgba(0, 0, 0, 0.44);
     font-family: 'NotoSansCJKkr-Regular';
+}
+
+#quiz_section {
+    margin-top: 70px;
+    width: 712px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.quiz_wrapper {
+    border-bottom: solid 1px #c8cdd7;
+    margin-bottom: 35px;
+}
+
+.quiz_category {
+    font-family: 'NotoSansCJKkr-Regular';
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.44);
+    margin-bottom: 1px;
+}
+
+.quiz_header {
+    font-family: 'NotoSansCJKkr-Light';
+    font-size: 40px;
+    letter-spacing: -0.8px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.87);
+    margin-bottom: 15px;
+}
+
+.quiz_content {
+    font-family: 'SMG20';
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.87);
+    margin-bottom: 21px;
+}
+
+.quiz_link {
+    font-family: 'SMG40';
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.quiz_link>a {
+    font-family: 'SMG20';
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.3px;
+    text-align: left;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.quiz_tag {
+    font-family: 'NotoSansCJKkr-Regular';
+    font-size: 12px;
+    letter-spacing: -0.2px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.44);
+    margin-bottom: 20px;
+}
+
+.answer_input>p {
+    font-family: 'NotoSansCJK-Regular';
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.63);
+    margin-left: 8px;
+}
+
+.answer_wrapper form {
+    position: relative;
+}
+
+.answer_input>input {
+    padding-left: 20px;
+    font-family: 'NotoSansCJK-Regular';
+    margin-top: 8px;
+    width: 712px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #adadb3;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.44);
+}
+
+button.answer_submit {
+    margin-top: 20px;
+    width: 80px;
+    height: 34px;
+    border-radius: 4px;
+    background-color: #5a99ed;
+    display: inline-block;
+    text-align: center;
+    font-family: 'NotoSansCJKkr-Regular';
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    text-align: center;
+    color: #ffffff;
+    float: right;
+}
+
+button.answer_submit::after {
+    position: relative;
+    content: '';
+    display: block;
+    clear: both;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="radio"]:checked+label,
+[type="radio"]:not(:checked)+label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'NotoSansCJKkr-Regular';
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: #606060;
+    height: 20px;
+    line-height: 25px;
+}
+
+[type="radio"]:checked+label:before {
+    background: #5a99ed;
+}
+
+[type="radio"]:not(:checked)+label:before {
+    border: 1px solid #ddd;
+}
+
+[type="radio"]:checked+label:before,
+[type="radio"]:not(:checked)+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+[type="radio"]:checked+label:after,
+[type="radio"]:not(:checked)+label:after {
+    content: '';
+    width: 9px;
+    height: 9px;
+    background: #fff;
+    position: absolute;
+    top: 5.5px;
+    left: 5.5px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked)+label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+[type="radio"]:checked+label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.radio {
+    display: inline-block;
+}
+
+.ox {
+    height: 48px;
+}
+
+.ox>a {
+    font-family: 'NotoSansCJKkr-Regular';
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.44);
+    float: left;
+    width: 50%;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 4px;
+    border: solid 1px #c8cdd7;
+}
+
+.xxxx.active {
+    border: solid 1px #da3333;
+    color: #da3333;
+}
+
+.oooo.active {
+    border: solid 1px #8eea62;
+    color: #8eea62;
+}
+
+.normal_input>input {
+    padding-left: 20px;
+    font-family: 'NotoSansCJK-Regular';
+    margin-top: 8px;
+    width: 712px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #adadb3;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.44);
+}
+
+.normal_input>p {
+    font-family: 'NotoSansCJK-Regular';
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.63);
+    margin-left: 8px;
 }

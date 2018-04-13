@@ -6,8 +6,23 @@
         "title": "메인 페이지"
     },
     {
+        "method": "get",
+        "path": "/quiz/:quizId",
+        "handler": "quiz"
+    },
+    {
         "method": "post",
         "path": "/register",
         "handler": "register"
+    },
+    {
+        "method": "post",
+        "path": "/login",
+        "handler": "login"
+    },
+    {
+        "method": "get",
+        "path": "/logout",
+        "handler": "logout"
     }
 ]

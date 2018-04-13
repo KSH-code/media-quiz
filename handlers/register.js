@@ -6,17 +6,20 @@ module.exports = async (req, res) => {
     if (isFind) return res.render('alert', {
         title: '에러!',
         content: '이미 존재하는 계정입니다.',
-        href: '/'
-    }).end()
-    if (confirmPassword === password) return res.render('alert', {
+        href: '/',
+        isLogin: 'user' in req.session
+    })
+    if (confirmPassword !== password) return res.render('alert', {
         title: '에러!',
         content: '비밀번호를 다시 확인해주세요.',
-        href: '/'
-    }).end()
+        href: '/',
+        isLogin: 'user' in req.session
+    })
     await new User({ name, nickname, password }).save()
     res.render('alert', {
         title: '에러!',
         content: '이미 존재하는 계정입니다.',
-        href: '/'
-    }).end()
+        href: '/',
+        isLogin: 'user' in req.session
+    })
 }

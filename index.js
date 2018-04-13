@@ -11,9 +11,8 @@ app.engine('html', require('ejs').renderFile)
 app.use(express.static('public'))
 app.use(session({
     secret: 'alsdkjglajsdlkgjasdg',
-    resave: false,
+    resave: true,
     saveUninitialized: true,
-    cookie: { secure: true }
 }))
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/quiz')
@@ -22,7 +21,8 @@ routeList.forEach(v => {
     if (page)
         return app[method](path, async (req, res) => {
             res.render(page, {
-                title
+                title,
+                isLogin: 'user' in req.session
             })
         })
     app[method](path, require(`./handlers/${handler}`))
