@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
         })
         user.chd = chd
         user.vns = vns
-        user.rank = vns * vns / chd
+        user.rank = chd === 0 - 1 ? vns * vns / chd
     }
     userList = userList.sort((a, b) => b.rank - a.rank)
     res.render('index', {
