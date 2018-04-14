@@ -1,0 +1,94 @@
+<%- include('./header.ejs') %>
+    <section>
+        <div id="write_section">
+            <div class="write_wrapper">
+                <div class="write_header">문제 출제</div>
+                <div class="write_content">허위 및 논란의 여부가 되는 문제는 삭제 조취처리됩니다.</div>
+            </div>
+            <div class="write_wrapper">
+                <form action="/quiz" method="post">
+                    <div class="write_input">
+                        <p>제목</p>
+                        <input type="text" placeholder="제목" name="title" required>
+                    </div>
+                    <div class="write_input">
+                        <p>문제</p>
+                        <input type="text" placeholder="문제" name="content" required maxlength="300" minlength="1">
+                    </div>
+                    <div class="write_input">
+                        <p>답변 타입</p>
+                        <div class="select_wrapper">
+                            <select name="resultType" id="type" required>
+                                <option value="0" selected>O/X</option>
+                                <option value="1">객관식</option>
+                                <option value="2">주관식</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="write_input result">
+                        <p>정답</p>
+                        <div class="ox">
+                            <a href="javascript:void(0)" class="oooo active">O</a>
+                            <a href="javascript:void(0)" class="xxxx">X</a>
+                            <input type="hidden" name="result1" value="O">
+                        </div>
+                    </div>
+                    <div class="write_input result">
+                        <p>정답</p>
+                        <input type="text" placeholder="객관식" name="result2">
+                        <p class="star_text2">* 쉼표로 답변을 분리해주세요.
+                            <br>예 ) 우그웨이,(레드불),나무</p>
+                    </div>
+                    <div class="write_input result">
+                        <p>정답</p>
+                        <input type="text" placeholder="객관식" name="result3">
+                    </div>
+                    <div class="write_input">
+                        <p>카테고리 타입</p>
+                        <div class="select_wrapper">
+                            <select name="categoryType" id="" required>
+                                <option value="IT">IT</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="write_input">
+                        <p>기사링크</p>
+                        <input type="text" placeholder="http://google.com" name="link" required>
+                    </div>
+                    <div class="write_input">
+                        <p>태그</p>
+                        <input type="text" placeholder="태그" name="tag" required>
+                    </div>
+                    <p class="star_text1">* 쉼표로 키워드를 분리해주세요.
+                        <br>예 ) 안드로이드,4차산업혁명</p>
+                    <button class="answer_submit">전송</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+        $('.oooo').on('click', function () {
+            $('.ox>input').attr('value', 'O')
+        })
+        $('.xxxx').on('click', function () {
+            $('.ox>input').attr('value', 'X')
+        })
+        const resultList = $('.result')
+        for (let i = 0; i < resultList.length; i++) {
+            if ($('#type').val() == i) {
+                $(resultList[i]).show()
+            } else {
+                $(resultList[i]).hide()
+            }
+        }
+        $('#type').on('change', function () {
+            for (let i = 0; i < resultList.length; i++) {
+                if ($(this).val() == i) {
+                    $(resultList[i]).show()
+                } else {
+                    $(resultList[i]).hide()
+                }
+            }
+        })
+    </script>
+    <%- include('./footer.ejs') %>

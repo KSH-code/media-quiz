@@ -1,14 +1,19 @@
 [
     {
         "method": "get",
-        "page": "index",
-        "path": "/",
-        "title": "메인 페이지"
+        "handler": "index",
+        "path": "/"
     },
     {
         "method": "get",
         "path": "/quiz/:quizId",
         "handler": "quiz"
+    },
+    {
+        "method": "get",
+        "page": "writeQuiz",
+        "path": "/quiz",
+        "title": "문제 만들기"
     },
     {
         "method": "post",
@@ -24,5 +29,10 @@
         "method": "get",
         "path": "/logout",
         "handler": "logout"
+    },
+    {
+        "method": "post",
+        "path": "/quiz",
+        "handler": "writeQuiz"
     }
 ]

@@ -2,51 +2,87 @@
     <section>
         <div id="quiz_section">
             <div class="quiz_wrapper">
-                <div class="quiz_category">IT</div>
-                <div class="quiz_header">잘가라 비트코인</div>
-                <div class="quiz_content">비트코인 채굴은 무한정 되는게 아니란거 다들 알 텐데, 언제 채굴 끝날지 아는 사람? 연도로 찍어보세요.</div>
-                <div class="quiz_link">기사링크:
-                    <a href="http://www.zdnet.co.kr/news/news_view.asp?artice_id=20180413125916">http://www.zdnet.co.kr/news/news_view.asp?artice_id=20180413125916</a>
+                <div class="quiz_category">
+                    <%= quiz.categoryType %>
                 </div>
-                <div class="quiz_tag">#비트코인, #암호화폐, #채굴, #마이닝</div>
+                <div class="quiz_header">
+                    <%= quiz.title %>
+                </div>
+                <div class="quiz_content">
+                    <%= quiz.content %>
+                </div>
+                <div class="quiz_link">기사링크:
+                    <a href="<%= quiz.link %>">
+                        <%= quiz.link %>
+                    </a>
+                </div>
+                <div class="quiz_tag">
+                    <%=quiz.tag%>
+                </div>
             </div>
             <div class="answer_wrapper">
-                <form action="/quiz/<%=quizId%>" method="post">
-                    <div class="answer_input">
-                        <p>답변</p>
-                        <input type="text" placeholder="답변" name="result">
-                    </div>
-                    <div class="radio">
-                        <input type="radio" id="test1" name="result">
-                        <label for="test1">Peach</label>
-                    </div>
-                    <div class="radio">
-                        <input type="radio" id="test2" name="result">
-                        <label for="test2">Peach</label>
-                    </div>
-                    <div class="radio">
-                        <input type="radio" id="test3" name="result">
-                        <label for="test3">Peach</label>
-                    </div>
-                    <div class="radio">
-                        <input type="radio" id="test4" name="result">
-                        <label for="test4">Peach</label>
-                    </div>
-                    <div class="ox">
-                        <a href="javascript:void(0)" class="oooo">O</a>
-                        <a href="javascript:void(0)" class="xxxx">X</a>
-                        <input type="hidden" display="hiddne">
-                    </div>
-                    <button class="answer_submit">전송</button>
+                <form action="/quiz/<%=quizId%>" method="get">
+                    <% if (quiz.resultType == 2) { %>
+                        <div class="answer_input">
+                            <p class="texttext">기사 읽기 전</p>
+                            <input type="text" placeholder="답변" name="result3">
+                        </div>
+                        <% } %>
+                            <% if (quiz.resultType == 1) { %>
+                                <p class="texttext">기사 읽기 전</p>
+                                <% quiz.result.forEach(v => {%>
+                                    <div class="radio">
+                                        <input type="radio" id="<%=v.replace('(', '').replace(')', '')%>" name="result2" value="<%=v.replace('(', '').replace(')', '')%>">
+                                        <label for="<%=v.replace('(', '').replace(')', '')%>">
+                                            <%=v.replace('(', '').replace(')', '')%>
+                                        </label>
+                                    </div>
+                                    <% }) %>
+                                        <% } %>
+                                            <% if (quiz.resultType == 0) { %>
+                                                <div class="ox">
+                                                    <p class="texttext">기사 읽기 전</p>
+                                                    <a href="javascript:void(0)" class="oooo">O</a>
+                                                    <a href="javascript:void(0)" class="xxxx">X</a>
+                                                    <input type="hidden" name="result1">
+                                                </div>
+                                                <% } %>
+                                                    <% if (quiz.resultType == 2) { %>
+                                                        <div class="answer_input">
+                                                            <p class="texttext">기사 읽은 후</p>
+                                                            <input type="text" placeholder="답변" name="result6">
+                                                        </div>
+                                                        <% } %>
+                                                            <% if (quiz.resultType == 1) { %>
+                                                                <p class="texttext">기사 읽은 후</p>
+                                                                <% quiz.result.forEach(v => {%>
+                                                                    <div class="radio">
+                                                                        <input type="radio" id="<%=v.replace('(', '').replace(')', '')%>1" name="result5" value="<%=v.replace('(', '').replace(')', '')%>">
+                                                                        <label for="<%=v.replace('(', '').replace(')', '')%>1">
+                                                                            <%=v.replace('(', '').replace(')', '')%>
+                                                                        </label>
+                                                                    </div>
+                                                                    <% }) %>
+                                                                        <% } %>
+                                                                            <% if (quiz.resultType == 0) { %>
+                                                                                <div class="ox">
+                                                                                    <p class="texttext">기사 읽은 후</p>
+                                                                                    <a href="javascript:void(0)" class="oooo">O</a>
+                                                                                    <a href="javascript:void(0)" class="xxxx">X</a>
+                                                                                    <input type="hidden" name="result4">
+                                                                                </div>
+                                                                                <% } %>
+                                                                                    <button class="answer_submit">전송</button>
                 </form>
             </div>
         </div>
     </section>
     <script>
         $('.oooo').on('click', function () {
-            $('.ox>input').attr('value', 'O')
+            $(this).parent().children('input').attr('value', 'O')
         })
         $('.xxxx').on('click', function () {
-            $('.ox>input').attr('value', 'X')
-        })</script>
+            $(this).parent().children('input').attr('value', 'X')
+        })
+    </script>
     <%- include('./footer.ejs') %>

@@ -18,11 +18,16 @@
   "homepage": "https://github.com/KSH-code/media-quiz#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "deep-pick": "^0.1.0",
     "easily-handle-error": "^1.0.0",
     "ejs": "^2.5.8",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "mongoose": "^5.0.14",
-    "request": "^2.85.0"
+    "object.pick": "^1.3.0",
+    "open-graph-scraper": "^3.2.0",
+    "path": "^0.12.7",
+    "request": "^2.85.0",
+    "url": "^0.11.0"
   }
 }

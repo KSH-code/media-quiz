@@ -20,12 +20,12 @@
         $('#popup').hide()
     })
     $('.oooo').on('click', function () {
-        $('.oooo').addClass('active')
-        $('.xxxx').removeClass('active')
+        $(this).parent().children('.oooo').addClass('active')
+        $(this).parent().children('.xxxx').removeClass('active')
     })
     $('.xxxx').on('click', function () {
-        $('.xxxx').addClass('active')
-        $('.oooo').removeClass('active')
+        $(this).parent().children('.xxxx').addClass('active')
+        $(this).parent().children('.oooo').removeClass('active')
     })
 </script>
 

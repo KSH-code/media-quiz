@@ -1,0 +1,49 @@
+<%- include('./header.ejs') %>
+    <section>
+        <div id="quiz_section">
+            <div class="quiz_wrapper">
+                <div class="quiz_category">
+                    <%= quiz.categoryType %>
+                </div>
+                <div class="quiz_header">
+                    <%= quiz.title %>
+                </div>
+                <div class="quiz_content">
+                    <%= quiz.content %>
+                </div>
+                <div class="quiz_link">기사링크:
+                    <a href="<%= quiz.link %>">
+                        <%= quiz.link %>
+                    </a>
+                </div>
+                <div class="quiz_tag">
+                    <%=quiz.tag%>
+                </div>
+            </div>
+            <div class="score_wrapper">
+                <div class="result_wrapper">
+                    <p class="result_wrapper_header">정답</p>
+                    <p class="result_wrapper_content result">
+                        <%=quiz.result%>
+                    </p>
+                </div>
+                <div class="befaf">
+                    <div class="result_wrapper befrore">
+                        <p class="result_wrapper_header">기사 읽기 전 제출 답안</p>
+                        <p class="result_wrapper_content">
+                            <%=result11%>
+                        </p>
+                    </div>
+                    <div class="result_wrapper after">
+                        <p class="result_wrapper_header">기사 읽은 후 제출 답안</p>
+                        <p class="result_wrapper_content">
+                            <%=result22%>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+    </script>
+    <%- include('./footer.ejs') %>

@@ -15,38 +15,38 @@
 <body>
     <div id="popup">
         <div id="popup_register">
-            <img src="" alt="" class="popup_logo">
+            <img src="/css/images/blogo.png" alt="" class="popup_logo">
             <form action="/register" method="post">
                 <div class="popup_input">
                     <p>아이디</p>
-                    <input type="text" placeholder="아이디" name="name">
+                    <input type="text" placeholder="아이디" name="name" required>
                 </div>
                 <div class="popup_input">
                     <p>닉네임</p>
-                    <input type="text" placeholder="닉네임" name="nickname">
+                    <input type="text" placeholder="닉네임" name="nickname" required>
                 </div>
                 <div class="popup_input">
                     <p>비밀번호</p>
-                    <input type="text" placeholder="비밀번호" name="password">
+                    <input type="password" placeholder="비밀번호" name="password" required>
                 </div>
                 <div class="popup_input">
                     <p>비밀번호 확인</p>
-                    <input type="text" placeholder="비밀번호 확인" name="confirmPassword">
+                    <input type="password" placeholder="비밀번호 확인" name="confirmPassword" required>
                 </div>
                 <button class="primary_button">회원가입</button>
                 <a href="javascript:void(0)" class="popup_link">로그인으로 돌아가기</a>
             </form>
         </div>
         <div id="popup_login">
-            <img src="" alt="" class="popup_logo">
+            <img src="/css/images/blogo.png" alt="" class="popup_logo">
             <form action="/login" method="post">
                 <div class="popup_input">
                     <p>아이디</p>
-                    <input type="text" placeholder="아이디" name="name">
+                    <input type="text" placeholder="아이디" name="name" required>
                 </div>
                 <div class="popup_input">
                     <p>비밀번호</p>
-                    <input type="text" placeholder="비밀번호" name="password">
+                    <input type="password" placeholder="비밀번호" name="password" required>
                 </div>
                 <button class="primary_button">회원로그인</button>
                 <a href="javascript:void(0)" class="popup_link">아직 회원이 아니십니까?</a>
@@ -56,7 +56,12 @@
     </div>
     <div id="header">
         <a href="/" class="logo">
-            <img src="" alt="logo">
+            <img src="/css/images/logo.png" alt="logo">
         </a>
-        <a href="<% if (isLogin) { %>/logout<% } else { %>javascript:void(0)<% } %>" class="<% if (isLogin) { %>logout<% } else { %>login<% } %>"><% if (isLogin) { %>로그아웃<% } else { %>로그인<% } %></a>
+        <a href="/quiz" class="logout quizw">퀴즈작성</a>
+        <a href="<% if (isLogin) { %>/logout<% } else { %>javascript:void(0)<% } %>" class="<% if (isLogin) { %>logout<% } else { %>login<% } %>">
+            <% if (isLogin) { %>로그아웃
+                <% } else { %>로그인
+                    <% } %>
+        </a>
     </div>
