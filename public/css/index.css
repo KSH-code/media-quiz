@@ -286,6 +286,8 @@ section::after,
     margin-bottom: 12px;
     width: 320px;
     height: 36px;
+    white-space: nowrap; 
+    overflow: hidden;
     text-overflow: ellipsis;
 }
 
